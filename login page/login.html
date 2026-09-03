@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eat Club — Login</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Eat Club</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Restaurants</a>
+      <a href="#">Offers</a>
+      <a href="#">Help</a>
+    </nav>
+    <button class="top-login-btn">login</button>
+  </header>
+
+  <div class="container">
+    <div class="login-card">
+      <h1>Welcome back</h1>
+      <p class="subtitle">Log in to order your favorite food</p>
+
+      <form>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com">
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+
+        <div class="options">
+          <span class="remember">
+            <input type="checkbox" id="remember" style="width:auto;">
+            <label for="remember" style="margin:0;">Remember me</label>
+          </span>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="button" onclick="window.location.href='index.html'" class="login-submit">Log in</button>
+      </form>
+
+      <div class="divider">or</div>
+
+      <p class="signup-text">New to Eat Club? <a href="#">Sign up</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
