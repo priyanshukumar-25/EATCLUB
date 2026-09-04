@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eat Club</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Eat Club — Order Delicious Food</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -12,7 +13,7 @@
 <nav class="navbar">
 
     <div class="nav-left">
-        <span class="logo">Eat Club</span>
+        <a href="index.html" class="logo">Eat <span>Club</span></a>
 
         <div class="location">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
@@ -25,10 +26,10 @@
     </div>
 
     <div class="nav-center">
-        <a href="#">Home</a>
-        <a href="#">Restaurants</a>
-        <a href="#">Offers</a>
-        <a href="#">Help</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="#menu">Restaurants</a>
+        <a href="#menu">Offers</a>
+        <a href="#help">Help</a>
     </div>
 
     <div class="search-box">
@@ -38,7 +39,7 @@
             <path d="m21 21-4.3-4.3"/>
         </svg>
 
-        <input type="text" placeholder="Search dishes or restaurants">
+        <input type="text" id="search-input" placeholder="Search dishes or restaurants">
     </div>
 
     <div class="nav-right">
@@ -62,31 +63,36 @@
             <span class="badge">3</span>
         </button>
 
-        <button type="button"
-            onclick="location.href='login.html'"
-            class="login-btn">
+        <a href="login.html" class="login-btn">
             Login
-        </button>
+        </a>
 
     </div>
 
 </nav>
 
 
-<section class="menu">
+<section class="menu" id="menu">
 
-    <h1>Popular Dishes</h1>
-    <p class="subtitle">order your favorite food</p>
+    <div class="menu-header">
+        <h1>Popular Dishes</h1>
+        <p class="subtitle">Order your favorite food with lightning fast delivery</p>
+    </div>
 
     <div class="cards">
 
         <!-- Card 1 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Pizza">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Cheese Pizza">
+            </div>
 
             <div class="content">
                 <h2>Cheese Pizza</h2>
-                <p class="rating">4.5 ★ 30 mins</p>
+                <div class="rating">
+                    <span class="rating-badge">4.5 ★</span>
+                    <span>30 mins</span>
+                </div>
                 <p class="description">
                     Delicious cheese pizza with a crispy crust and melted mozzarella.
                 </p>
@@ -101,11 +107,16 @@
 
         <!-- Card 2 -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Samosa">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Samosa">
+            </div>
 
             <div class="content">
                 <h2>Samosa</h2>
-                <p class="rating">4.2 ★ 20 mins</p>
+                <div class="rating">
+                    <span class="rating-badge">4.2 ★</span>
+                    <span>20 mins</span>
+                </div>
                 <p class="description">
                     Crispy samosa filled with a delicious mix of vegetables and spices.
                 </p>
@@ -120,13 +131,18 @@
 
         <!-- Card 3 -->
         <div class="card">
-            <img src="https://i.pinimg.com/736x/02/a6/f7/02a6f7020e214f5100a8d2432b8316a6.jpg" alt="Momos">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=600&q=80" alt="Veg Momos">
+            </div>
 
             <div class="content">
                 <h2>Veg Momos</h2>
-                <p class="rating">4.2 ★ 20 mins</p>
+                <div class="rating">
+                    <span class="rating-badge">4.2 ★</span>
+                    <span>20 mins</span>
+                </div>
                 <p class="description">
-                    Delicious vegetarian dumplings filled with vegetables and spices.
+                    Delicious vegetarian dumplings filled with fresh vegetables and spices.
                 </p>
 
                 <div class="bottom">
@@ -139,13 +155,18 @@
 
         <!-- Card 4 -->
         <div class="card">
-            <img src="https://i.pinimg.com/736x/1c/7c/c7/1c7cc7d5e55a9e91fb591b9eef9c6610.jpg" alt="Burger">
+            <div class="card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Veg Burger">
+            </div>
 
             <div class="content">
                 <h2>Veg Burger</h2>
-                <p class="rating">4.3 ★ 25 mins</p>
+                <div class="rating">
+                    <span class="rating-badge">4.3 ★</span>
+                    <span>25 mins</span>
+                </div>
                 <p class="description">
-                    A delicious vegetarian burger with crispy coating and fresh vegetables.
+                    A delicious vegetarian burger with crispy patty and fresh vegetables.
                 </p>
 
                 <div class="bottom">
@@ -155,10 +176,12 @@
             </div>
         </div>
 
-    </div>
+        <div id="no-results" class="no-results">
+            <h3>No matching dishes found</h3>
+            <p>Try searching for something else like Pizza, Samosa, or Burger.</p>
+        </div>
 
-</section>
-    <!-- cards CLOSED HERE -->
+    </div>
 
 </section>
 
