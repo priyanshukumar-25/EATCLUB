@@ -1,0 +1,183 @@
+/* =========================================================
+   EAT CLUB - CONTACT & HELP PAGE STYLES (css/contact.css)
+   ========================================================= */
+
+.contact-page {
+    padding: 20px 0 80px;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.help-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 24px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.help-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.help-icon {
+    font-size: 36px;
+    margin-bottom: 14px;
+}
+
+.help-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.help-card p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+}
+
+.help-link {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.help-link:hover {
+    text-decoration: underline;
+}
+
+/* CONTACT & FAQ SPLIT */
+.contact-faq-split {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.contact-form-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+}
+
+.contact-form-box h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.contact-form-box p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+/* FAQ SECTION */
+.faq-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+}
+
+.faq-box h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 16px;
+    font-weight: 700;
+    font-size: 14.5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.faq-toggle-icon {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+.faq-item.open .faq-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 16px 16px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    display: none;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .contact-faq-split {
+        grid-template-columns: 1fr;
+    }
+}

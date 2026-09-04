@@ -3,187 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eat Club — Order Delicious Food</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Eat Club — Order Delicious Food Online | Fast Delivery</title>
+    <meta name="description" content="Order delicious food online from Eat Club. Enjoy lightning fast delivery, 50% off deals, and top-rated restaurants near you.">
+    <!-- Global CSS & Home CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- Global JS & Main JS -->
+    <script src="js/global.js" defer></script>
     <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-
     <div class="nav-left">
         <a href="index.html" class="logo">Eat <span>Club</span></a>
-
-        <div class="location">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
+        <div class="location" id="location-picker" title="Change Location">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
                 <circle cx="12" cy="10" r="2.5"/>
             </svg>
-            Greater Noida
+            <span class="location-text">Greater Noida, Sector 62</span>
+            <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
         </div>
     </div>
 
     <div class="nav-center">
         <a href="index.html" class="active">Home</a>
-        <a href="#menu">Restaurants</a>
-        <a href="#menu">Offers</a>
-        <a href="#help">Help</a>
+        <a href="menu.html">Menu</a>
+        <a href="offers.html">Offers</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="contact.html">Help & FAQ</a>
     </div>
 
     <div class="search-box">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="7"/>
             <path d="m21 21-4.3-4.3"/>
         </svg>
-
-        <input type="text" id="search-input" placeholder="Search dishes or restaurants">
+        <input type="text" id="search-input" placeholder="Search pizza, biryani, momos..." autocomplete="off">
     </div>
 
     <div class="nav-right">
-
-        <button class="icon-btn" aria-label="Notifications">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
+        <button class="icon-btn" aria-label="Notifications" id="notification-btn" title="Offers Notification">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
                 <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
             </svg>
-            <span class="badge">2</span>
+            <span class="badge">1</span>
         </button>
 
-        <button class="icon-btn" aria-label="Cart">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
+        <a href="cart.html" class="icon-btn" aria-label="Cart" id="cart-btn" title="View Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="9" cy="21" r="1"/>
                 <circle cx="20" cy="21" r="1"/>
                 <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.6a2 2 0 0 0 2-1.6L23 6H6"/>
             </svg>
-            <span class="badge">3</span>
-        </button>
-
-        <a href="login.html" class="login-btn">
-            Login
+            <span class="badge" id="cart-badge">0</span>
         </a>
 
+        <a href="login.html" class="login-btn">Login</a>
     </div>
-
 </nav>
 
+<main>
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="pulse-dot"></span>
+                    <span>Fastest Delivery in Greater Noida</span>
+                </div>
+                <h1 class="hero-title">
+                    Craving Good Food? <br>
+                    <span>We Deliver Hot & Fresh</span> to Your Doorstep.
+                </h1>
+                <p class="hero-desc">
+                    Discover mouth-watering dishes from top-rated restaurants, handcrafted street food, and curated combos delivered in under 30 minutes.
+                </p>
 
-<section class="menu" id="menu">
+                <div class="hero-actions">
+                    <a href="menu.html" class="btn btn-primary">Order Now</a>
+                    <a href="offers.html" class="btn btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                            <line x1="7" y1="7" x2="7.01" y2="7"/>
+                        </svg>
+                        View Offers (50% Off)
+                    </a>
+                </div>
 
-    <div class="menu-header">
-        <h1>Popular Dishes</h1>
-        <p class="subtitle">Order your favorite food with lightning fast delivery</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>500+</strong>
+                        <span>Partner Kitchens</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong>25 Mins</strong>
+                        <span>Average Delivery</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong>4.8 ★</strong>
+                        <span>Customer Rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card-floating float-top">
+                    <span class="floating-icon">🔥</span>
+                    <div>
+                        <div class="floating-title">Flat 50% OFF</div>
+                        <div class="floating-subtitle">Code: WELCOME50</div>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Artisan Cheesy Pizza" class="hero-main-img">
+                </div>
+
+                <div class="hero-card-floating float-bottom">
+                    <span class="floating-icon">⚡</span>
+                    <div>
+                        <div class="floating-title">Superfast Delivery</div>
+                        <div class="floating-subtitle">Live GPS Tracking</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROMOTIONAL DEALS STRIP -->
+    <section class="offers-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Featured Deals</span>
+                <h2 class="section-title">Special Offers For You</h2>
+                <p class="section-subtitle">Save big on every meal with our limited-time vouchers</p>
+            </div>
+
+            <div class="offers-grid">
+                <div class="offer-card offer-card-orange">
+                    <div class="offer-badge">NEW USER</div>
+                    <div class="offer-discount">50% OFF</div>
+                    <p class="offer-terms">Up to ₹150 on your first 3 food orders</p>
+                    <div class="coupon-box" onclick="copyCoupon('WELCOME50')" title="Click to copy code">
+                        <code>WELCOME50</code>
+                        <span class="copy-hint">Copy</span>
+                    </div>
+                </div>
+
+                <div class="offer-card offer-card-purple">
+                    <div class="offer-badge">FREE DELIVERY</div>
+                    <div class="offer-discount">ZERO FEE</div>
+                    <p class="offer-terms">Free doorstep delivery on orders above ₹199</p>
+                    <div class="coupon-box" onclick="copyCoupon('FREEDEL')" title="Click to copy code">
+                        <code>FREEDEL</code>
+                        <span class="copy-hint">Copy</span>
+                    </div>
+                </div>
+
+                <div class="offer-card offer-card-green">
+                    <div class="offer-badge">WEEKEND FEAST</div>
+                    <div class="offer-discount">FLAT ₹100 OFF</div>
+                    <p class="offer-terms">On all Biryani, Pizza & Burger combos</p>
+                    <div class="coupon-box" onclick="copyCoupon('FEAST100')" title="Click to copy code">
+                        <code>FEAST100</code>
+                        <span class="copy-hint">Copy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUISINES EXPLORER -->
+    <section class="cuisines-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Explore Categories</span>
+                <h2 class="section-title">What are you in the mood for?</h2>
+            </div>
+
+            <div class="cuisine-cards-grid">
+                <a href="menu.html?cat=pizza" class="cuisine-box">
+                    <span class="cuisine-emoji">🍕</span>
+                    <span class="cuisine-title">Pizzas</span>
+                    <span class="cuisine-count">24+ Dishes</span>
+                </a>
+                <a href="menu.html?cat=biryani" class="cuisine-box">
+                    <span class="cuisine-emoji">🍛</span>
+                    <span class="cuisine-title">Biryani</span>
+                    <span class="cuisine-count">18+ Dishes</span>
+                </a>
+                <a href="menu.html?cat=burger" class="cuisine-box">
+                    <span class="cuisine-emoji">🍔</span>
+                    <span class="cuisine-title">Burgers</span>
+                    <span class="cuisine-count">15+ Dishes</span>
+                </a>
+                <a href="menu.html?cat=momos" class="cuisine-box">
+                    <span class="cuisine-emoji">🥟</span>
+                    <span class="cuisine-title">Momos</span>
+                    <span class="cuisine-count">12+ Dishes</span>
+                </a>
+                <a href="menu.html?cat=snacks" class="cuisine-box">
+                    <span class="cuisine-emoji">🍟</span>
+                    <span class="cuisine-title">Street Food</span>
+                    <span class="cuisine-count">30+ Dishes</span>
+                </a>
+                <a href="menu.html?cat=dessert" class="cuisine-box">
+                    <span class="cuisine-emoji">🍰</span>
+                    <span class="cuisine-title">Desserts</span>
+                    <span class="cuisine-count">10+ Dishes</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-badge">The Eat Club Promise</span>
+                <h2 class="section-title">Why Foodies Love Eat Club</h2>
+                <p class="section-subtitle">We go the extra mile to ensure your meals are piping hot, hygienic, and on time.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>30-Min Delivery</h3>
+                    <p>Optimized routing and dedicated delivery partners ensure prompt doorstep delivery.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🥗</div>
+                    <h3>100% Quality Food</h3>
+                    <p>Verified restaurant kitchens adhering to strict cleanliness and ingredient standards.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Live GPS Tracking</h3>
+                    <p>Track your food rider in real-time from kitchen prep to your apartment gate.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Zero Extra Fees</h3>
+                    <p>Clear pricing, no surge charges on standard orders, and instant UPI refunds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-badge">Customer Stories</span>
+                <h2 class="section-title">Trusted by 50,000+ Food Lovers</h2>
+                <p class="section-subtitle">Here is what our happy club members in Greater Noida say about us</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Eat Club is phenomenal! The Margherita pizza arrived bubbling hot within 20 mins. Best food delivery experience in Greater Noida."</p>
+                    <div class="testi-user">
+                        <div class="user-avatar">AD</div>
+                        <div>
+                            <strong>Aman Dixit</strong>
+                            <span>Knowledge Park, Greater Noida</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"The Dum Biryani and Kurkure Momos are top notch. Great packaging, eco-friendly cutlery, and polite delivery riders."</p>
+                    <div class="testi-user">
+                        <div class="user-avatar">SR</div>
+                        <div>
+                            <strong>Sneha Roy</strong>
+                            <span>Alpha 1, Greater Noida</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-text">"Affordable prices, great discounts with WELCOME50, and really fast response from support team. 10/10!"</p>
+                    <div class="testi-user">
+                        <div class="user-avatar">RK</div>
+                        <div>
+                            <strong>Rohan Kapoor</strong>
+                            <span>Pari Chowk, Greater Noida</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APP DOWNLOAD PROMO -->
+    <section class="app-banner-section">
+        <div class="container">
+            <div class="app-banner-box">
+                <div class="app-banner-content">
+                    <span class="section-badge">Eat Club Mobile App</span>
+                    <h2>Download The Mobile App</h2>
+                    <p>Unlock app-exclusive flash sales, real-time live map tracking, and 1-tap reordering.</p>
+                    
+                    <div class="app-buttons">
+                        <a href="#" class="store-badge">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.85-.9.04-2.02.6-2.66 1.34-.56.64-1.05 1.7-0.92 2.73 1.01.08 2.05-.47 2.66-1.22z"/>
+                            </svg>
+                            <div>
+                                <small>Download on</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="store-badge">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.34 0 .67.12.93.34L18.5 12 5.43 21.66c-.26.22-.59.34-.93.34-.83 0-1.5-.67-1.5-1.5zm16.5-8.5L6.2 3.8l11.4 7.2 1.9 1zm-13.3 8.2 11.4-7.2-11.4-7.2v14.4z"/>
+                            </svg>
+                            <div>
+                                <small>GET IT ON</small>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="app-banner-stats">
+                    <div class="app-stat-card">
+                        <span class="app-stat-num">1M+</span>
+                        <span class="app-stat-label">Downloads</span>
+                    </div>
+                    <div class="app-stat-card">
+                        <span class="app-stat-num">4.8 ★</span>
+                        <span class="app-stat-label">Average App Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">Eat <span>Club</span></a>
+                <p class="footer-desc">
+                    Your favorite food ordering platform. Delivering fresh cuisines, spicy treats, and sweet desserts straight to your doorstep.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Explore Menu</a></li>
+                    <li><a href="offers.html">Deals & Coupons</a></li>
+                    <li><a href="restaurants.html">Partner Restaurants</a></li>
+                    <li><a href="contact.html">Help & FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Popular Cuisines</h4>
+                <ul>
+                    <li><a href="menu.html?cat=pizza">Artisan Pizzas</a></li>
+                    <li><a href="menu.html?cat=biryani">Hyderabadi Biryani</a></li>
+                    <li><a href="menu.html?cat=burger">Gourmet Burgers</a></li>
+                    <li><a href="menu.html?cat=momos">Tibetan Momos</a></li>
+                    <li><a href="menu.html?cat=dessert">Desserts & Shakes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support & Legal</h4>
+                <ul>
+                    <li><a href="contact.html">Customer Care</a></li>
+                    <li><a href="login.html">My Account</a></li>
+                    <li><a href="cart.html">View Cart</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Eat Club Inc. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Security</a>
+            </div>
+        </div>
     </div>
+</footer>
 
-    <div class="cards">
-
-        <!-- Card 1 -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Cheese Pizza">
-            </div>
-
-            <div class="content">
-                <h2>Cheese Pizza</h2>
-                <div class="rating">
-                    <span class="rating-badge">4.5 ★</span>
-                    <span>30 mins</span>
-                </div>
-                <p class="description">
-                    Delicious cheese pizza with a crispy crust and melted mozzarella.
-                </p>
-
-                <div class="bottom">
-                    <span class="price">₹199</span>
-                    <button class="add">Add</button>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Card 2 -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Samosa">
-            </div>
-
-            <div class="content">
-                <h2>Samosa</h2>
-                <div class="rating">
-                    <span class="rating-badge">4.2 ★</span>
-                    <span>20 mins</span>
-                </div>
-                <p class="description">
-                    Crispy samosa filled with a delicious mix of vegetables and spices.
-                </p>
-
-                <div class="bottom">
-                    <span class="price">₹99</span>
-                    <button class="add">Add</button>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Card 3 -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=600&q=80" alt="Veg Momos">
-            </div>
-
-            <div class="content">
-                <h2>Veg Momos</h2>
-                <div class="rating">
-                    <span class="rating-badge">4.2 ★</span>
-                    <span>20 mins</span>
-                </div>
-                <p class="description">
-                    Delicious vegetarian dumplings filled with fresh vegetables and spices.
-                </p>
-
-                <div class="bottom">
-                    <span class="price">₹99</span>
-                    <button class="add">Add</button>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Card 4 -->
-        <div class="card">
-            <div class="card-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Veg Burger">
-            </div>
-
-            <div class="content">
-                <h2>Veg Burger</h2>
-                <div class="rating">
-                    <span class="rating-badge">4.3 ★</span>
-                    <span>25 mins</span>
-                </div>
-                <p class="description">
-                    A delicious vegetarian burger with crispy patty and fresh vegetables.
-                </p>
-
-                <div class="bottom">
-                    <span class="price">₹149</span>
-                    <button class="add">Add</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="no-results" class="no-results">
-            <h3>No matching dishes found</h3>
-            <p>Try searching for something else like Pizza, Samosa, or Burger.</p>
-        </div>
-
-    </div>
-
-</section>
+<div id="toast" class="toast-notification"></div>
 
 </body>
 </html>

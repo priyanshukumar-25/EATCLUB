@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart — Eat Club | Quick Checkout</title>
+    <meta name="description" content="Review your delicious items, apply discount coupons, and checkout securely with fast 30-min delivery on Eat Club.">
+    <!-- Global & Page CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <!-- Global & Page JS -->
+    <script src="js/global.js" defer></script>
+    <script src="js/cart.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="logo">Eat <span>Club</span></a>
+        <div class="location" id="location-picker" title="Change Location">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            <span class="location-text">Greater Noida, Sector 62</span>
+            <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+    </div>
+
+    <div class="nav-center">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="offers.html">Offers</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="contact.html">Help & FAQ</a>
+    </div>
+
+    <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search pizza, biryani, momos..." autocomplete="off">
+    </div>
+
+    <div class="nav-right">
+        <button class="icon-btn" aria-label="Notifications" id="notification-btn" title="Offers Notification">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+            </svg>
+            <span class="badge">1</span>
+        </button>
+
+        <a href="cart.html" class="icon-btn" aria-label="Cart" id="cart-btn" title="View Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.6a2 2 0 0 0 2-1.6L23 6H6"/>
+            </svg>
+            <span class="badge" id="cart-badge">0</span>
+        </a>
+
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<main>
+    <header class="page-header">
+        <div class="container">
+            <span class="section-badge">Fast Checkout</span>
+            <h1>Your Food Cart <span id="cart-item-count" style="font-size: 20px; color: var(--text-dim); font-weight: 500;"></span></h1>
+            <p>Review items, customize quantities, apply coupon vouchers, and place your order</p>
+        </div>
+    </header>
+
+    <section class="cart-page">
+        <div class="container">
+            <!-- EMPTY CART STATE -->
+            <div id="empty-cart-state" class="empty-cart-state">
+                <div class="empty-cart-icon">🛒</div>
+                <h2>Your Cart is Empty</h2>
+                <p>Looks like you haven't added any mouth-watering dishes yet. Explore our menu to find your favorites!</p>
+                <a href="menu.html" class="btn btn-primary">Browse Menu</a>
+            </div>
+
+            <!-- CART CONTENT LAYOUT -->
+            <div id="cart-content-layout" class="cart-layout" style="display: none;">
+                <!-- Left: Items list -->
+                <div class="cart-items-box">
+                    <div class="cart-box-header">
+                        <h2>Order Items</h2>
+                        <button id="clear-cart" class="clear-cart-btn">Clear All</button>
+                    </div>
+
+                    <div id="cart-items-list">
+                        <!-- Rendered by js/cart.js -->
+                    </div>
+                </div>
+
+                <!-- Right: Bill Details & Promo -->
+                <div class="bill-box">
+                    <h3>Bill Summary</h3>
+
+                    <!-- Coupon apply box -->
+                    <form id="coupon-form" class="apply-coupon-form">
+                        <input type="text" id="coupon-input" class="coupon-input" placeholder="Promo Code (e.g. WELCOME50)" autocomplete="off">
+                        <button type="submit" class="apply-coupon-btn">Apply</button>
+                    </form>
+
+                    <div class="bill-breakdown">
+                        <div class="bill-row">
+                            <span>Item Total</span>
+                            <span id="bill-item-total">₹0</span>
+                        </div>
+                        <div class="bill-row">
+                            <span>Delivery Fee</span>
+                            <span id="bill-delivery-fee">₹40</span>
+                        </div>
+                        <div class="bill-row">
+                            <span>Taxes & Restaurant Charges</span>
+                            <span id="bill-taxes">₹0</span>
+                        </div>
+                        <div class="bill-row discount-row" id="discount-row" style="display: none;">
+                            <span>Coupon Discount</span>
+                            <span id="bill-discount">-₹0</span>
+                        </div>
+                        <div class="bill-row total-row">
+                            <span>To Pay</span>
+                            <span id="bill-grand-total">₹0</span>
+                        </div>
+                    </div>
+
+                    <button id="checkout-btn" class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">Eat <span>Club</span></a>
+                <p class="footer-desc">
+                    Fastest food delivery in Greater Noida. Guaranteed fresh & hot.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="offers.html">Promo Codes</a></li>
+                    <li><a href="contact.html">Help & Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Eat Club Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div id="toast" class="toast-notification"></div>
+
+</body>
+</html>

@@ -1,57 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eat Club — Login</title>
-<link rel="stylesheet" href="css/login.css">
-<script src="js/login.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign In — Eat Club</title>
+    <meta name="description" content="Log in to your Eat Club account to view past orders, track deliveries, and unlock exclusive discounts.">
+    <!-- Global & Page CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <!-- Global & Page JS -->
+    <script src="js/global.js" defer></script>
+    <script src="js/login.js" defer></script>
 </head>
+
 <body>
 
-  <header>
-    <a href="index.html" class="logo">Eat <span>Club</span></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#menu">Restaurants</a>
-      <a href="index.html#offers">Offers</a>
-      <a href="index.html#help">Help</a>
-    </nav>
-    <a href="index.html" class="top-login-btn">Back to Menu</a>
-  </header>
-
-  <div class="container">
-    <div class="login-card">
-      <h1>Welcome back</h1>
-      <p class="subtitle">Log in to order your favorite food</p>
-
-      <form id="login-form">
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@example.com" required>
-        </div>
-
-        <div class="field">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" required>
-        </div>
-
-        <div class="options">
-          <label class="remember">
-            <input type="checkbox" id="remember">
-            <span>Remember me</span>
-          </label>
-          <a href="#">Forgot password?</a>
-        </div>
-
-        <button type="submit" class="login-submit">Log in</button>
-      </form>
-
-      <div class="divider">or</div>
-
-      <p class="signup-text">New to Eat Club? <a href="#">Sign up</a></p>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="logo">Eat <span>Club</span></a>
     </div>
-  </div>
+
+    <div class="nav-center">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="offers.html">Offers</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="contact.html">Help & FAQ</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="index.html" class="btn btn-secondary btn-sm">← Back to Home</a>
+    </div>
+</nav>
+
+<main class="login-page-container">
+    <div class="login-card">
+        <div class="login-header">
+            <span class="section-badge">Welcome Back</span>
+            <h1>Log in to Eat Club</h1>
+            <p class="subtitle">Access your favorite meals, saved addresses & deals</p>
+        </div>
+
+        <form id="login-form">
+            <div class="field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="name@example.com" required autocomplete="email">
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required autocomplete="current-password">
+            </div>
+
+            <div class="options">
+                <label class="remember">
+                    <input type="checkbox" id="remember" checked>
+                    <span>Remember me</span>
+                </label>
+                <a href="#" onclick="showToast('Password reset link sent if registered!')">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary login-submit">Log In</button>
+        </form>
+
+        <div class="divider">or continue with</div>
+
+        <div class="social-login-btns">
+            <button type="button" class="social-btn" onclick="showToast('Google Sign-in simulated successfully!')">
+                <span>🌐</span> Google
+            </button>
+            <button type="button" class="social-btn" onclick="showToast('Apple Sign-in simulated successfully!')">
+                <span>🍎</span> Apple
+            </button>
+        </div>
+
+        <p class="signup-text">Don't have an account? <a href="#" onclick="showToast('Create account mode active!')">Sign up now</a></p>
+    </div>
+</main>
+
+<div id="toast" class="toast-notification"></div>
 
 </body>
 </html>

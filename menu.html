@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu — Eat Club | Order Your Favorite Food</title>
+    <meta name="description" content="Explore delicious pizzas, burgers, biryanis, momos, and desserts on Eat Club. Filter by veg/non-veg and order instantly.">
+    <!-- Global & Page CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- Global & Page JS -->
+    <script src="js/global.js" defer></script>
+    <script src="js/menu.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="logo">Eat <span>Club</span></a>
+        <div class="location" id="location-picker" title="Change Location">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            <span class="location-text">Greater Noida, Sector 62</span>
+            <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+    </div>
+
+    <div class="nav-center">
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="offers.html">Offers</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="contact.html">Help & FAQ</a>
+    </div>
+
+    <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search menu items..." autocomplete="off">
+        <button id="clear-search" style="display: none; background: none; border: none; color: var(--text-dim); cursor: pointer;">✕</button>
+    </div>
+
+    <div class="nav-right">
+        <button class="icon-btn" aria-label="Notifications" id="notification-btn" title="Offers Notification">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+            </svg>
+            <span class="badge">1</span>
+        </button>
+
+        <a href="cart.html" class="icon-btn" aria-label="Cart" id="cart-btn" title="View Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.6a2 2 0 0 0 2-1.6L23 6H6"/>
+            </svg>
+            <span class="badge" id="cart-badge">0</span>
+        </a>
+
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<main>
+    <header class="page-header">
+        <div class="container">
+            <span class="section-badge">Live Kitchen</span>
+            <h1>Explore Our Delicious Menu</h1>
+            <p>Handcrafted recipes made with fresh ingredients and delivered hot to your doorstep</p>
+        </div>
+    </header>
+
+    <section class="menu-page-section">
+        <div class="container">
+            <!-- FILTERS AND CATEGORIES -->
+            <div class="menu-controls">
+                <div class="category-pills">
+                    <button class="cat-pill active" data-category="all">🍽️ All Dishes</button>
+                    <button class="cat-pill" data-category="pizza">🍕 Pizza</button>
+                    <button class="cat-pill" data-category="biryani">🍛 Biryani</button>
+                    <button class="cat-pill" data-category="burger">🍔 Burgers</button>
+                    <button class="cat-pill" data-category="momos">🥟 Momos</button>
+                    <button class="cat-pill" data-category="snacks">🍟 Snacks</button>
+                    <button class="cat-pill" data-category="dessert">🍰 Desserts</button>
+                </div>
+
+                <div class="filter-toggles">
+                    <button class="filter-toggle-btn" id="veg-toggle">🟢 Veg Only</button>
+                    <button class="filter-toggle-btn" id="nonveg-toggle">🔴 Non-Veg</button>
+                </div>
+            </div>
+
+            <!-- DISHES CARDS GRID -->
+            <div class="cards-grid">
+                <!-- Dish 1 -->
+                <div class="card" data-category="pizza" data-type="veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag bestseller">Bestseller</span>
+                        <span class="diet-badge veg">🟢 Veg</span>
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" alt="Cheesy Margherita Pizza" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Cheesy Margherita Pizza</h2>
+                            <span class="restaurant-name">The Pizza Haven</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.6 ★</span>
+                            <span>• 25 mins</span>
+                        </div>
+                        <p class="description">
+                            Stone-baked artisan crust loaded with Italian mozzarella, herb tomato purée, and fresh basil leaves.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹199</span>
+                                <span class="original-price">₹299</span>
+                            </div>
+                            <button class="add-btn" data-id="1" data-name="Cheesy Margherita Pizza" data-price="199" data-icon="🍕">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 2 -->
+                <div class="card" data-category="biryani" data-type="non-veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag special">Chef Special</span>
+                        <span class="diet-badge non-veg">🔴 Non-Veg</span>
+                        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Hyderabadi Dum Biryani" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Hyderabadi Dum Biryani</h2>
+                            <span class="restaurant-name">Royal Biryani Palace</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.8 ★</span>
+                            <span>• 30 mins</span>
+                        </div>
+                        <p class="description">
+                            Long-grain saffron basmati rice layered with juicy marinated chicken pieces cooked on slow dum.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹249</span>
+                                <span class="original-price">₹349</span>
+                            </div>
+                            <button class="add-btn" data-id="2" data-name="Hyderabadi Dum Biryani" data-price="249" data-icon="🍛">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 3 -->
+                <div class="card" data-category="snacks" data-type="veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag trending">Street Hit</span>
+                        <span class="diet-badge veg">🟢 Veg</span>
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Crispy Punjabi Samosa" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Crispy Punjabi Samosa (2 Pcs)</h2>
+                            <span class="restaurant-name">Chai & Samosa Co.</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.4 ★</span>
+                            <span>• 15 mins</span>
+                        </div>
+                        <p class="description">
+                            Golden crisp pastry packed with spiced mashed potatoes, green peas, and cashews. Served with mint chutney.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹79</span>
+                                <span class="original-price">₹99</span>
+                            </div>
+                            <button class="add-btn" data-id="3" data-name="Crispy Punjabi Samosa" data-price="79" data-icon="🥟">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 4 -->
+                <div class="card" data-category="momos" data-type="veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag bestseller">Must Try</span>
+                        <span class="diet-badge veg">🟢 Veg</span>
+                        <img src="https://images.unsplash.com/photo-1625220194771-7ebdea0b70b9?auto=format&fit=crop&w=600&q=80" alt="Steamed Veg Momos" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Steamed Veg Momos (6 Pcs)</h2>
+                            <span class="restaurant-name">Momo Junction</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.5 ★</span>
+                            <span>• 20 mins</span>
+                        </div>
+                        <p class="description">
+                            Tender steamed dumplings filled with spiced cabbage, carrot, and paneer with our signature spicy red dip.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹99</span>
+                                <span class="original-price">₹139</span>
+                            </div>
+                            <button class="add-btn" data-id="4" data-name="Steamed Veg Momos" data-price="99" data-icon="🥟">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 5 -->
+                <div class="card" data-category="burger" data-type="veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag bestseller">Popular</span>
+                        <span class="diet-badge veg">🟢 Veg</span>
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Smoky Paneer Burger" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Smoky Paneer Burger</h2>
+                            <span class="restaurant-name">Urban Burger Co.</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.3 ★</span>
+                            <span>• 20 mins</span>
+                        </div>
+                        <p class="description">
+                            Crunchy paneer patty layered with fresh lettuce, spicy chipotle mayo, and melted cheese in a toasted bun.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹149</span>
+                                <span class="original-price">₹199</span>
+                            </div>
+                            <button class="add-btn" data-id="5" data-name="Smoky Paneer Burger" data-price="149" data-icon="🍔">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 6 -->
+                <div class="card" data-category="pizza" data-type="veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag special">Loaded</span>
+                        <span class="diet-badge veg">🟢 Veg</span>
+                        <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=600&q=80" alt="Farmhouse Veggie Supreme" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Farmhouse Veggie Supreme</h2>
+                            <span class="restaurant-name">The Pizza Haven</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.7 ★</span>
+                            <span>• 25 mins</span>
+                        </div>
+                        <p class="description">
+                            Bell peppers, golden sweet corn, black olives, onions, and mushrooms topped with extra cheese blend.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹269</span>
+                                <span class="original-price">₹349</span>
+                            </div>
+                            <button class="add-btn" data-id="6" data-name="Farmhouse Veggie Supreme" data-price="269" data-icon="🍕">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 7 -->
+                <div class="card" data-category="momos" data-type="veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag trending">Extra Crunchy</span>
+                        <span class="diet-badge veg">🟢 Veg</span>
+                        <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=600&q=80" alt="Crispy Kurkure Momos" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Crispy Kurkure Momos (6 Pcs)</h2>
+                            <span class="restaurant-name">Momo Junction</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.6 ★</span>
+                            <span>• 20 mins</span>
+                        </div>
+                        <p class="description">
+                            Deep fried cornflake-crusted momos bursting with paneer and savory herbs. Served with schezwan dip.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹129</span>
+                                <span class="original-price">₹169</span>
+                            </div>
+                            <button class="add-btn" data-id="7" data-name="Crispy Kurkure Momos" data-price="129" data-icon="🥟">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dish 8 -->
+                <div class="card" data-category="dessert" data-type="veg">
+                    <div class="card-img-wrapper">
+                        <span class="item-tag bestseller">Sweet Indulgence</span>
+                        <span class="diet-badge veg">🟢 Veg</span>
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Molten Choco Lava Cake" loading="lazy">
+                    </div>
+                    <div class="content">
+                        <div class="card-top-info">
+                            <h2>Molten Choco Lava Cake</h2>
+                            <span class="restaurant-name">Sweet Tooth Bakery</span>
+                        </div>
+                        <div class="rating">
+                            <span class="rating-badge">4.9 ★</span>
+                            <span>• 15 mins</span>
+                        </div>
+                        <p class="description">
+                            Warm, rich chocolate cake with a molten Belgian dark chocolate center that flows with every spoon.
+                        </p>
+                        <div class="bottom">
+                            <div class="price-container">
+                                <span class="price">₹89</span>
+                                <span class="original-price">₹129</span>
+                            </div>
+                            <button class="add-btn" data-id="8" data-name="Molten Choco Lava Cake" data-price="89" data-icon="🍰">Add +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty State -->
+                <div id="no-results" class="no-results">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No matching dishes found</h3>
+                    <p>Try searching for other keywords or reset your filters.</p>
+                    <button class="btn btn-secondary btn-sm" onclick="resetMenuFilters()">Reset Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">Eat <span>Club</span></a>
+                <p class="footer-desc">
+                    Your premier food ordering platform in Greater Noida.
+                </p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Order</h4>
+                <ul>
+                    <li><a href="menu.html?cat=pizza">Pizzas</a></li>
+                    <li><a href="menu.html?cat=biryani">Biryani</a></li>
+                    <li><a href="menu.html?cat=burger">Burgers</a></li>
+                    <li><a href="cart.html">View Cart</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Help & FAQ</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Eat Club Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div id="toast" class="toast-notification"></div>
+
+</body>
+</html>

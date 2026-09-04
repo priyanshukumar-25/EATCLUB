@@ -1,0 +1,173 @@
+/* =========================================================
+   EAT CLUB - OFFERS PAGE STYLES (css/offers.css)
+   ========================================================= */
+
+.offers-page {
+    padding: 20px 0 80px;
+}
+
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.deal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.deal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.deal-badge {
+    align-self: flex-start;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.deal-card.orange {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.12) 0%, rgba(26, 29, 38, 0.9) 100%);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+.deal-card.orange .deal-badge {
+    background: rgba(255, 107, 53, 0.2);
+    color: #ff986c;
+}
+
+.deal-card.purple {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(26, 29, 38, 0.9) 100%);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+.deal-card.purple .deal-badge {
+    background: rgba(139, 92, 246, 0.2);
+    color: #c4b5fd;
+}
+
+.deal-card.green {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(26, 29, 38, 0.9) 100%);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+.deal-card.green .deal-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6ee7b7;
+}
+
+.deal-card.gold {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(26, 29, 38, 0.9) 100%);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+.deal-card.gold .deal-badge {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fcd34d;
+}
+
+.deal-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.deal-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.coupon-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    margin-top: auto;
+}
+
+.coupon-row code {
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+
+.copy-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.copy-btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* BANK OFFERS */
+.bank-offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.bank-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: var(--transition);
+}
+
+.bank-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.bank-icon {
+    font-size: 28px;
+    background: var(--bg-surface);
+    padding: 10px;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.bank-info h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.bank-info p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.4;
+}

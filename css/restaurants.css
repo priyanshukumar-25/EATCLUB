@@ -1,0 +1,112 @@
+/* =========================================================
+   EAT CLUB - RESTAURANTS PAGE STYLES (css/restaurants.css)
+   ========================================================= */
+
+.restaurants-page {
+    padding: 20px 0 80px;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+}
+
+.restaurant-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
+}
+
+.rest-img-wrapper {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    background: #0f1015;
+}
+
+.rest-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.restaurant-card:hover .rest-img-wrapper img {
+    transform: scale(1.06);
+}
+
+.rest-discount-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(16, 18, 24, 0.9);
+    color: #ff986c;
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.rest-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.rest-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.rest-top h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.rest-rating {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    font-weight: 800;
+}
+
+.rest-cuisines {
+    color: var(--text-dim);
+    font-size: 13.5px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.rest-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-dim);
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    margin-top: auto;
+}
+
+.rest-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers & Deals — Eat Club | Best Food Coupons & Discounts</title>
+    <meta name="description" content="Discover verified Eat Club promo codes, bank cashback offers, and 50% discount coupons on your favorite meals.">
+    <!-- Global & Page CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/offers.css">
+    <!-- Global & Page JS -->
+    <script src="js/global.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="logo">Eat <span>Club</span></a>
+        <div class="location" id="location-picker" title="Change Location">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            <span class="location-text">Greater Noida, Sector 62</span>
+            <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+    </div>
+
+    <div class="nav-center">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="offers.html" class="active">Offers</a>
+        <a href="restaurants.html">Restaurants</a>
+        <a href="contact.html">Help & FAQ</a>
+    </div>
+
+    <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search pizza, biryani, momos..." autocomplete="off">
+    </div>
+
+    <div class="nav-right">
+        <button class="icon-btn" aria-label="Notifications" id="notification-btn" title="Offers Notification">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+            </svg>
+            <span class="badge">1</span>
+        </button>
+
+        <a href="cart.html" class="icon-btn" aria-label="Cart" id="cart-btn" title="View Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.6a2 2 0 0 0 2-1.6L23 6H6"/>
+            </svg>
+            <span class="badge" id="cart-badge">0</span>
+        </a>
+
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<main>
+    <header class="page-header">
+        <div class="container">
+            <span class="section-badge">Super Savings</span>
+            <h1>Coupons, Deals & Cashback</h1>
+            <p>Apply these verified promo codes at checkout to enjoy massive savings on your orders</p>
+        </div>
+    </header>
+
+    <section class="offers-page">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Exclusive Promo Codes</h2>
+                <p class="section-subtitle">Click "Copy Code" to instantly use them on the checkout page</p>
+            </div>
+
+            <div class="deals-grid">
+                <!-- Deal 1 -->
+                <div class="deal-card orange">
+                    <div class="deal-badge">NEW USER SPECIAL</div>
+                    <div>
+                        <div class="deal-title">Flat 50% OFF</div>
+                        <p class="deal-desc">Get 50% off up to ₹150 on your first 3 food orders. Valid on all restaurants.</p>
+                    </div>
+                    <div class="coupon-row">
+                        <code>WELCOME50</code>
+                        <button class="copy-btn" onclick="copyCoupon('WELCOME50')">Copy Code</button>
+                    </div>
+                </div>
+
+                <!-- Deal 2 -->
+                <div class="deal-card purple">
+                    <div class="deal-badge">FREE DELIVERY</div>
+                    <div>
+                        <div class="deal-title">Zero Delivery Charge</div>
+                        <p class="deal-desc">Enjoy free doorstep delivery on all orders above ₹199 across Greater Noida.</p>
+                    </div>
+                    <div class="coupon-row">
+                        <code>FREEDEL</code>
+                        <button class="copy-btn" onclick="copyCoupon('FREEDEL')">Copy Code</button>
+                    </div>
+                </div>
+
+                <!-- Deal 3 -->
+                <div class="deal-card green">
+                    <div class="deal-badge">WEEKEND COMBO</div>
+                    <div>
+                        <div class="deal-title">Flat ₹100 Cashback</div>
+                        <p class="deal-desc">Order any Biryani, Pizza or Burger combo above ₹399 and get flat ₹100 instant discount.</p>
+                    </div>
+                    <div class="coupon-row">
+                        <code>FEAST100</code>
+                        <button class="copy-btn" onclick="copyCoupon('FEAST100')">Copy Code</button>
+                    </div>
+                </div>
+
+                <!-- Deal 4 -->
+                <div class="deal-card gold">
+                    <div class="deal-badge">LUNCH FLASH SALE</div>
+                    <div>
+                        <div class="deal-title">20% OFF Meals</div>
+                        <p class="deal-desc">Valid every weekday between 12:00 PM and 3:30 PM on all lunch bowls and thalis.</p>
+                    </div>
+                    <div class="coupon-row">
+                        <code>LUNCH20</code>
+                        <button class="copy-btn" onclick="copyCoupon('LUNCH20')">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BANK OFFERS -->
+            <div class="section-header" style="margin-top: 40px;">
+                <span class="section-badge">Payment Partners</span>
+                <h2 class="section-title">Bank & Wallet Offers</h2>
+            </div>
+
+            <div class="bank-offers-grid">
+                <div class="bank-card">
+                    <div class="bank-icon">💳</div>
+                    <div class="bank-info">
+                        <h4>HDFC Bank Cards</h4>
+                        <p>Get extra 15% instant discount up to ₹100 using HDFC Credit & Debit Cards.</p>
+                    </div>
+                </div>
+
+                <div class="bank-card">
+                    <div class="bank-icon">📱</div>
+                    <div class="bank-info">
+                        <h4>PayTM UPI</h4>
+                        <p>Win scratch cards with up to ₹50 cashback on min transaction of ₹199.</p>
+                    </div>
+                </div>
+
+                <div class="bank-card">
+                    <div class="bank-icon">⚡</div>
+                    <div class="bank-info">
+                        <h4>CRED Pay</h4>
+                        <p>Earn up to 250 CRED coins and ₹75 cashback on your food bill.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">Eat <span>Club</span></a>
+                <p class="footer-desc">
+                    Your premier food ordering platform. Delivering fresh cuisines and unbeatable offers.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Food Offers</h4>
+                <ul>
+                    <li><a href="menu.html?cat=pizza">Pizza Offers</a></li>
+                    <li><a href="menu.html?cat=biryani">Biryani Deals</a></li>
+                    <li><a href="cart.html">Apply Coupon</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="contact.html">Customer Care</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Eat Club Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div id="toast" class="toast-notification"></div>
+
+</body>
+</html>

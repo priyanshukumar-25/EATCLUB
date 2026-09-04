@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants — Eat Club | Top Rated Partner Kitchens</title>
+    <meta name="description" content="Discover verified and hygienic partner restaurants in Greater Noida on Eat Club. Fastest prep times and authentic cuisines.">
+    <!-- Global & Page CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/restaurants.css">
+    <!-- Global JS -->
+    <script src="js/global.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="index.html" class="logo">Eat <span>Club</span></a>
+        <div class="location" id="location-picker" title="Change Location">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            <span class="location-text">Greater Noida, Sector 62</span>
+            <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+    </div>
+
+    <div class="nav-center">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="offers.html">Offers</a>
+        <a href="restaurants.html" class="active">Restaurants</a>
+        <a href="contact.html">Help & FAQ</a>
+    </div>
+
+    <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input type="text" id="search-input" placeholder="Search pizza, biryani, momos..." autocomplete="off">
+    </div>
+
+    <div class="nav-right">
+        <button class="icon-btn" aria-label="Notifications" id="notification-btn" title="Offers Notification">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+            </svg>
+            <span class="badge">1</span>
+        </button>
+
+        <a href="cart.html" class="icon-btn" aria-label="Cart" id="cart-btn" title="View Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.6a2 2 0 0 0 2-1.6L23 6H6"/>
+            </svg>
+            <span class="badge" id="cart-badge">0</span>
+        </a>
+
+        <a href="login.html" class="login-btn">Login</a>
+    </div>
+</nav>
+
+<main>
+    <header class="page-header">
+        <div class="container">
+            <span class="section-badge">Verified Kitchens</span>
+            <h1>Popular Partner Restaurants</h1>
+            <p>Handpicked culinary spots with 100% hygiene rating, authentic flavor, and lightning fast delivery</p>
+        </div>
+    </header>
+
+    <section class="restaurants-page">
+        <div class="container">
+            <div class="restaurant-grid">
+                <!-- Restaurant 1 -->
+                <div class="restaurant-card">
+                    <div class="rest-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="The Pizza Haven" loading="lazy">
+                        <span class="rest-discount-badge">Flat 40% OFF</span>
+                    </div>
+                    <div class="rest-details">
+                        <div class="rest-top">
+                            <h3>The Pizza Haven</h3>
+                            <span class="rest-rating">4.8 ★</span>
+                        </div>
+                        <p class="rest-cuisines">Italian, Artisan Pizzas, Cheesy Calzones, Pastas</p>
+                        <div class="rest-meta">
+                            <span>📍 1.8 km</span>
+                            <span>⏱️ 20-25 mins</span>
+                            <span>💰 ₹300 for two</span>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a href="menu.html?cat=pizza" class="btn btn-primary btn-sm" style="width: 100%;">View Dishes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 2 -->
+                <div class="restaurant-card">
+                    <div class="rest-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Royal Biryani Palace" loading="lazy">
+                        <span class="rest-discount-badge">Free Delivery</span>
+                    </div>
+                    <div class="rest-details">
+                        <div class="rest-top">
+                            <h3>Royal Biryani Palace</h3>
+                            <span class="rest-rating">4.9 ★</span>
+                        </div>
+                        <p class="rest-cuisines">Hyderabadi Dum Biryani, Mughlai, Kebabs, Rolls</p>
+                        <div class="rest-meta">
+                            <span>📍 2.4 km</span>
+                            <span>⏱️ 30-35 mins</span>
+                            <span>💰 ₹400 for two</span>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a href="menu.html?cat=biryani" class="btn btn-primary btn-sm" style="width: 100%;">View Dishes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 3 -->
+                <div class="restaurant-card">
+                    <div class="rest-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=600&q=80" alt="Urban Burger Co." loading="lazy">
+                        <span class="rest-discount-badge">Buy 1 Get 1</span>
+                    </div>
+                    <div class="rest-details">
+                        <div class="rest-top">
+                            <h3>Urban Burger Co.</h3>
+                            <span class="rest-rating">4.6 ★</span>
+                        </div>
+                        <p class="rest-cuisines">Gourmet Burgers, Loaded Fries, Shakes, Wraps</p>
+                        <div class="rest-meta">
+                            <span>📍 1.2 km</span>
+                            <span>⏱️ 15-20 mins</span>
+                            <span>💰 ₹250 for two</span>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a href="menu.html?cat=burger" class="btn btn-primary btn-sm" style="width: 100%;">View Dishes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 4 -->
+                <div class="restaurant-card">
+                    <div class="rest-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=600&q=80" alt="Momo Junction" loading="lazy">
+                        <span class="rest-discount-badge">Flat 20% OFF</span>
+                    </div>
+                    <div class="rest-details">
+                        <div class="rest-top">
+                            <h3>Momo Junction</h3>
+                            <span class="rest-rating">4.7 ★</span>
+                        </div>
+                        <p class="rest-cuisines">Tibetan Momos, Kurkure Fried, Steamed Dimsums</p>
+                        <div class="rest-meta">
+                            <span>📍 1.5 km</span>
+                            <span>⏱️ 15-20 mins</span>
+                            <span>💰 ₹180 for two</span>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a href="menu.html?cat=momos" class="btn btn-primary btn-sm" style="width: 100%;">View Dishes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 5 -->
+                <div class="restaurant-card">
+                    <div class="rest-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Chai & Samosa Co." loading="lazy">
+                        <span class="rest-discount-badge">Top Breakfast</span>
+                    </div>
+                    <div class="rest-details">
+                        <div class="rest-top">
+                            <h3>Chai & Samosa Co.</h3>
+                            <span class="rest-rating">4.5 ★</span>
+                        </div>
+                        <p class="rest-cuisines">Punjabi Samosa, Masala Chai, Kachoris, Jalebi</p>
+                        <div class="rest-meta">
+                            <span>📍 0.9 km</span>
+                            <span>⏱️ 12-18 mins</span>
+                            <span>💰 ₹120 for two</span>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a href="menu.html?cat=snacks" class="btn btn-primary btn-sm" style="width: 100%;">View Dishes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Restaurant 6 -->
+                <div class="restaurant-card">
+                    <div class="rest-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Sweet Tooth Bakery" loading="lazy">
+                        <span class="rest-discount-badge">Dessert Special</span>
+                    </div>
+                    <div class="rest-details">
+                        <div class="rest-top">
+                            <h3>Sweet Tooth Bakery</h3>
+                            <span class="rest-rating">4.9 ★</span>
+                        </div>
+                        <p class="rest-cuisines">Molten Cakes, Pastries, Waffles, Thick Shakes</p>
+                        <div class="rest-meta">
+                            <span>📍 2.1 km</span>
+                            <span>⏱️ 15-20 mins</span>
+                            <span>💰 ₹200 for two</span>
+                        </div>
+                        <div style="margin-top: 16px;">
+                            <a href="menu.html?cat=dessert" class="btn btn-primary btn-sm" style="width: 100%;">View Dishes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="logo">Eat <span>Club</span></a>
+                <p class="footer-desc">
+                    Partnering with only the finest and cleanest kitchens in town.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Partner With Us</h4>
+                <ul>
+                    <li><a href="contact.html">List Your Restaurant</a></li>
+                    <li><a href="contact.html">Become a Delivery Hero</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Help & FAQ</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Eat Club Inc. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div id="toast" class="toast-notification"></div>
+
+</body>
+</html>
