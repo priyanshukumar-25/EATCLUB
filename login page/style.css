@@ -1,3 +1,14 @@
+:root{
+    --bg: #121212;
+    --bg-card: #1a1a1a;
+    --bg-nav: #101010;
+    --text: #f5f2ee;
+    --text-dim: #a8a8a8;
+    --accent: #ff6b35;
+    --border: #2a2a2a;
+  }
+
+
 *{
     margin: 0;
     padding: 0;
@@ -11,65 +22,146 @@ body{
 
 }
 
-header{
-    height: 70px;
-    background: rgb(14, 13, 13);
-    display: flex;
-    align-items: center;
-    padding: 0 8%;
-    justify-content: space-between;
+.navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background: var(--bg-nav);
+    padding: 14px 40px;
+    border-bottom: 1px solid var(--border);
+    gap: 24px;
+  }
+ 
+  .nav-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+  }
+ 
+  .logo{
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+ 
+  .location{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    font-size: 13px;
+    color: var(--text-dim);
+    cursor:pointer;
+    border-left: 1px solid var(--border);
+    padding-left: 12px;
+    margin-left: 4px;
+  }
+ 
+  .location:hover{ color: var(--accent); }
+ 
+  .nav-center{
+    display:flex;
+    align-items:center;
+    gap: 32px;
+    flex-shrink:0;
+  }
+ 
+  .nav-center a{
+    color: var(--text);
+    text-decoration:none;
+    font-size: 15px;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+ 
+  .nav-center a:hover{ 
+    opacity: 1; 
+    color: var(--accent);
 
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8);
-
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
+ 
+  .search-box{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    flex:1;
+    max-width: 340px;
+  }
 
-.logo{
-    font-size: 30px;
-    font-weight: bold;
-    color: #f0e9e9;
-
-}
-
-nav{
-    display: flex;
-    gap: 35px;
-
-}
-
-nav a{
-    text-decoration: none;
-    color: #f7f4f4;
-    font-weight: 500;
-
-    transition: 0.3s;
-
-}
-
-nav a:hover{
-    color: #f77409;
-    transform: translateY(-2px);
-
-}
-
-.login{
-    background: #f7f4f1;
-    color: rgb(3, 3, 3);
-    border: none;
-    padding: 10px 25px;
+  .search-box:hover{
+    color: var(--accent);
+  }
+ 
+  .search-box input{
+    background:none;
+    border:none;
+    outline:none;
+    color: var(--accent);
+    font-size: 14px;
+    width:100%;
+  }
+ 
+  .search-box input::placeholder{ color: var(--text-dim); }
+ 
+  .search-box svg{ flex-shrink:0; opacity:0.6; }
+ 
+  .nav-right{
+    display:flex;
+    align-items:center;
+    gap: 20px;
+    flex-shrink:0;
+  }
+ 
+  .icon-btn{
+    position:relative;
+    background:none;
+    border:none;
+    color: var(--text);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    padding: 4px;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+  }
+ 
+  .icon-btn:hover{ opacity: 1; }
+ 
+  .badge{
+    position:absolute;
+    top:-4px;
+    right:-6px;
+    background: var(--accent);
+    color:#fff;
+    font-size: 10px;
+    font-weight:700;
+    border-radius: 50%;
+    width:16px;
+    height:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+ 
+  .login-btn{
+    background: #fff;
+    color: #111;
+    border:none;
+    padding: 10px 20px;
     border-radius: 6px;
-    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    cursor:pointer;
+  }
 
-    transition: 0.3s;
-}
+  .login-btn:hover{
+    background: var(--accent);
+  }
 
-.login:hover{
-    background: #e66d08;
-    transform: scale(1.05);
-
-}
 .menu{
     width: 55%;
     margin: 50px auto;
@@ -87,13 +179,15 @@ nav a:hover{
 }
 
 .cards{
+    width: 200px;
+    height: 380px;
     background: rgb(10, 10, 10);
     border-radius: 15px;
     overflow: hidden;
 
     box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
 
-    transition: 0.4s ease;
+    transition: 0.3s ease;
 
     cursor: pointer;
 }
@@ -106,8 +200,8 @@ nav a:hover{
 }
 
 .card img{
-    width: 100%;
-    height: 190px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
 
     transition: 0.5s ease;
