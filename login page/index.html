@@ -6,110 +6,161 @@
     <title>Eat Club</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <nav class="navbar">
-  <div class="nav-left">
-    <span class="logo">Eat Club</span>
-    <div class="location">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-      Greater Noida
+
+<nav class="navbar">
+
+    <div class="nav-left">
+        <span class="logo">Eat Club</span>
+
+        <div class="location">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+            </svg>
+            Greater Noida
+        </div>
     </div>
-  </div>
- 
-  <div class="nav-center">
-    <a href="#">Home</a>
-    <a href="#">Restaurants</a>
-    <a href="#">Offers</a>
-    <a href="#">Help</a>
-  </div>
- 
-  <div class="search-box">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    <input type="text" placeholder="Search dishes or restaurants">
-  </div>
- 
-  <div class="nav-right">
-    <button class="icon-btn" aria-label="Notifications">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
-      <span class="badge">2</span>
-    </button>
-    <button class="icon-btn" aria-label="Cart">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.6a2 2 0 0 0 2-1.6L23 6H6"/></svg>
-      <span class="badge">3</span>
-    </button>
-    <button type="button" onclick="location.href='login.html'" class="login-btn">Login</button>
-  </div>
+
+    <div class="nav-center">
+        <a href="#">Home</a>
+        <a href="#">Restaurants</a>
+        <a href="#">Offers</a>
+        <a href="#">Help</a>
+    </div>
+
+    <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="m21 21-4.3-4.3"/>
+        </svg>
+
+        <input type="text" placeholder="Search dishes or restaurants">
+    </div>
+
+    <div class="nav-right">
+
+        <button class="icon-btn" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+            </svg>
+            <span class="badge">2</span>
+        </button>
+
+        <button class="icon-btn" aria-label="Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.6a2 2 0 0 0 2-1.6L23 6H6"/>
+            </svg>
+            <span class="badge">3</span>
+        </button>
+
+        <button type="button"
+            onclick="location.href='login.html'"
+            class="login-btn">
+            Login
+        </button>
+
+    </div>
+
 </nav>
 
 
-    <section class="menu">
-        <h1>Popular Dishes</h1>
-        <p class="subtitle">order your favorite food</p>
+<section class="menu">
 
-        <div class="cards">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Pizza">
+    <h1>Popular Dishes</h1>
+    <p class="subtitle">order your favorite food</p>
 
-                <div class="content">
-                    <h2>Cheese Pizza</h2>
-                    <p class="rating">4.5 ★ 30 mins</p>
-                    <p class="description">Delicious cheese pizza with a crispy crust and melted mozzarella.</p>
+    <div class="cards">
 
-                    <div class="bottom">
-                        <span class="price">₹199</span>
-                        <button class="add">Add</button>
-
-                    </div>
-                </div>
-        </div>
-            
-        <div class="cards">
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950"alt="Momos">
-
-                <div class="content">
-                    <h2>Samosa</h2>
-                    <p class="rating">4.2 ★ 20 mins</p>
-                    <p class="description">Steamed dumplings filled with a mix of vegetables and spices.</p>
-
-                    <div class="bottom">
-                        <span class="price">₹99</span>
-                        <button class="add">Add</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <!-- Card 1 -->
         <div class="card">
-                <img src="https://i.pinimg.com/736x/02/a6/f7/02a6f7020e214f5100a8d2432b8316a6.jpg" alt="Momos">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Pizza">
 
-                <div class="content">
-                    <h2>Veg Momos</h2>
-                    <p class="rating">4.2 ★ 20 mins</p>
-                    <p class="description">Delicious vegetarian dumplings filled with a mix of vegetables and spices.</p>
+            <div class="content">
+                <h2>Cheese Pizza</h2>
+                <p class="rating">4.5 ★ 30 mins</p>
+                <p class="description">
+                    Delicious cheese pizza with a crispy crust and melted mozzarella.
+                </p>
 
-                    <div class="bottom">
-                        <span class="price">₹99</span>
-                        <button class="add">Add</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://i.pinimg.com/736x/1c/7c/c7/1c7cc7d5e55a9e91fb591b9eef9c6610.jpg" alt="Burger">
-                <div class="content">
-                    <h2>Veg Burger</h2>
-                    <p class="rating">4.3 ★ 25 mins</p>
-                    <p class="description">A delicious vegetarian burger with a crispy coating and fresh vegetables.</p>
-                    <div class="bottom">
-                        <span class="price">₹149</span>
-                        <button class="add">Add</button>
-                    </div>
+                <div class="bottom">
+                    <span class="price">₹199</span>
+                    <button class="add">Add</button>
                 </div>
             </div>
         </div>
-    </section>
-    
+
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950" alt="Samosa">
+
+            <div class="content">
+                <h2>Samosa</h2>
+                <p class="rating">4.2 ★ 20 mins</p>
+                <p class="description">
+                    Crispy samosa filled with a delicious mix of vegetables and spices.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">₹99</span>
+                    <button class="add">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/02/a6/f7/02a6f7020e214f5100a8d2432b8316a6.jpg" alt="Momos">
+
+            <div class="content">
+                <h2>Veg Momos</h2>
+                <p class="rating">4.2 ★ 20 mins</p>
+                <p class="description">
+                    Delicious vegetarian dumplings filled with vegetables and spices.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">₹99</span>
+                    <button class="add">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/1c/7c/c7/1c7cc7d5e55a9e91fb591b9eef9c6610.jpg" alt="Burger">
+
+            <div class="content">
+                <h2>Veg Burger</h2>
+                <p class="rating">4.3 ★ 25 mins</p>
+                <p class="description">
+                    A delicious vegetarian burger with crispy coating and fresh vegetables.
+                </p>
+
+                <div class="bottom">
+                    <span class="price">₹149</span>
+                    <button class="add">Add</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+    <!-- cards CLOSED HERE -->
+
+</section>
+
 </body>
 </html>
