@@ -1,9 +1,6 @@
-// Eat Club - Global Utilities & Cart State
-
 const CART_STORAGE_KEY = 'eatclub_cart';
 const LOCATION_STORAGE_KEY = 'eatclub_location';
 
-// Global Cart Manager
 const CartManager = {
     getItems() {
         try {
@@ -83,7 +80,6 @@ const CartManager = {
     }
 };
 
-// Global Toast System
 function showToast(message) {
     let toast = document.getElementById('toast');
     if (!toast) {
@@ -101,7 +97,6 @@ function showToast(message) {
     }, 3200);
 }
 
-// Global Coupon Code Copier
 window.copyCoupon = function(code) {
     if (navigator.clipboard) {
         navigator.clipboard.writeText(code).then(() => {
@@ -115,10 +110,8 @@ window.copyCoupon = function(code) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialise badge
     CartManager.updateBadge();
 
-    // Location Picker Setup
     const locPicker = document.getElementById('location-picker');
     const savedLoc = localStorage.getItem(LOCATION_STORAGE_KEY);
     if (savedLoc && locPicker) {
@@ -139,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Notification click
     const notifBtn = document.getElementById('notification-btn');
     if (notifBtn) {
         notifBtn.addEventListener('click', () => {
@@ -147,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Global Search Redirect if not on menu page
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('keydown', (e) => {

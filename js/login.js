@@ -1,5 +1,3 @@
-// Interactive script for Login Page
-
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const emailInput = document.getElementById('email');
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simple demo login action -> redirect to index.html
             window.location.href = 'index.html';
         });
     }

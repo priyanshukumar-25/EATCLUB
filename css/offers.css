@@ -1,7 +1,3 @@
-/* =========================================================
-   EAT CLUB - OFFERS PAGE STYLES (css/offers.css)
-   ========================================================= */
-
 .offers-page {
     padding: 20px 0 80px;
 }
@@ -129,7 +125,6 @@
     transform: scale(1.05);
 }
 
-/* BANK OFFERS */
 .bank-offers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

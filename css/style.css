@@ -24,7 +24,6 @@
     --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +43,6 @@ body {
     overflow-x: hidden;
 }
 
-/* UTILITY / CONTAINERS */
 .section-container {
     width: 90%;
     max-width: 1240px;
@@ -91,7 +89,6 @@ body {
     margin: 0 auto;
 }
 
-/* BUTTONS */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -131,9 +128,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* =========================
-   NAVBAR
-   ========================= */
 .navbar {
     display: flex;
     align-items: center;
@@ -345,9 +339,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* =========================
-   HERO SECTION
-   ========================= */
 .hero-section {
     padding: 60px 0 40px;
     background: radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.08) 0%, transparent 60%),
@@ -458,7 +449,6 @@ body {
     background: var(--border);
 }
 
-/* HERO VISUAL */
 .hero-visual {
     position: relative;
     display: flex;
@@ -540,9 +530,6 @@ body {
     font-weight: 600;
 }
 
-/* =========================
-   SPECIAL OFFERS SECTION
-   ========================= */
 .offers-section {
     padding: 40px 0;
 }
@@ -652,9 +639,6 @@ body {
     font-weight: 600;
 }
 
-/* =========================
-   CATEGORY PILLS
-   ========================= */
 .categories-section {
     padding: 24px 0 16px;
 }
@@ -710,9 +694,6 @@ body {
     font-size: 16px;
 }
 
-/* =========================
-   MENU SECTION & CARDS
-   ========================= */
 .menu {
     padding: 30px 0 60px;
 }
@@ -769,7 +750,6 @@ body {
     color: #6ee7b7;
 }
 
-/* CARDS GRID */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -805,7 +785,6 @@ body {
     font-size: 20px;
 }
 
-/* INDIVIDUAL CARD */
 .card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -843,7 +822,6 @@ body {
     transform: scale(1.08);
 }
 
-/* CARD BADGES & TAGS */
 .item-tag {
     position: absolute;
     top: 12px;
@@ -894,7 +872,6 @@ body {
     color: #fca5a5;
 }
 
-/* CARD CONTENT */
 .content {
     padding: 18px;
     display: flex;
@@ -947,7 +924,6 @@ body {
     flex-grow: 1;
 }
 
-/* PRICE & ADD BUTTON */
 .bottom {
     display: flex;
     justify-content: space-between;
@@ -1000,9 +976,6 @@ body {
     color: #fff;
 }
 
-/* =========================
-   TOP RESTAURANTS SECTION
-   ========================= */
 .restaurants-section {
     padding: 50px 0;
     background: rgba(18, 20, 28, 0.6);
@@ -1099,9 +1072,6 @@ body {
     padding-top: 12px;
 }
 
-/* =========================
-   WHY CHOOSE US / FEATURES
-   ========================= */
 .why-us-section {
     padding: 70px 0;
 }
@@ -1149,9 +1119,6 @@ body {
     line-height: 1.6;
 }
 
-/* =========================
-   TESTIMONIALS SECTION
-   ========================= */
 .testimonials-section {
     padding: 50px 0 70px;
     background: rgba(18, 20, 28, 0.5);
@@ -1223,9 +1190,6 @@ body {
     color: var(--text-dim);
 }
 
-/* =========================
-   APP DOWNLOAD BANNER
-   ========================= */
 .app-banner-section {
     padding: 30px 0 60px;
 }
@@ -1318,9 +1282,6 @@ body {
     color: var(--text-dim);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
 .site-footer {
     background: #08090c;
     border-top: 1px solid var(--border);
@@ -1426,9 +1387,6 @@ body {
     color: var(--accent);
 }
 
-/* =========================
-   TOAST NOTIFICATION
-   ========================= */
 .toast-notification {
     position: fixed;
     bottom: 24px;
@@ -1456,9 +1414,6 @@ body {
     transform: translateY(0);
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-   ========================= */
 @media (max-width: 1080px) {
     .hero-container {
         grid-template-columns: 1fr;

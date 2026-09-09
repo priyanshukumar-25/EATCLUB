@@ -1,5 +1,3 @@
-// Eat Club - Menu Page Logic (js/menu.js)
-
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const clearSearchBtn = document.getElementById('clear-search');
@@ -13,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let isVegOnly = false;
     let isNonVegOnly = false;
 
-    // Check URL parameters for search query or category (e.g. ?search=pizza or ?cat=biryani)
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
     const catParam = urlParams.get('cat');
@@ -33,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Filter Logic
     function applyFilters() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
         let visibleCount = 0;
@@ -72,10 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initial filter apply
     applyFilters();
 
-    // Search events
     if (searchInput) {
         searchInput.addEventListener('input', applyFilters);
     }
@@ -88,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Category pills click
     categoryPills.forEach(pill => {
         pill.addEventListener('click', () => {
             categoryPills.forEach(p => p.classList.remove('active'));
@@ -98,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Diet toggles
     if (vegToggleBtn) {
         vegToggleBtn.addEventListener('click', () => {
             isVegOnly = !isVegOnly;
@@ -119,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add to Cart handler
     const addButtons = document.querySelectorAll('.card .add-btn');
     addButtons.forEach(btn => {
         btn.addEventListener('click', () => {

@@ -1,5 +1,3 @@
-// Eat Club - Cart & Checkout Logic (js/cart.js)
-
 let activeDiscount = 0;
 let appliedCouponCode = '';
 
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Coupon Apply
     const couponForm = document.getElementById('coupon-form');
     if (couponForm) {
         couponForm.addEventListener('submit', (e) => {
@@ -33,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Checkout button
     const checkoutBtn = document.getElementById('checkout-btn');
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', () => {

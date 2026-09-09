@@ -1,12 +1,7 @@
-/* =========================================================
-   EAT CLUB - MENU PAGE STYLES (css/menu.css)
-   ========================================================= */
-
 .menu-page-section {
     padding: 20px 0 80px;
 }
 
-/* FILTER CONTROLS BAR */
 .menu-controls {
     display: flex;
     justify-content: space-between;
@@ -93,7 +88,6 @@
     color: #6ee7b7;
 }
 
-/* CARDS GRID */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -138,7 +132,6 @@
     transform: scale(1.08);
 }
 
-/* CARD BADGES & TAGS */
 .item-tag {
     position: absolute;
     top: 12px;
@@ -189,7 +182,6 @@
     color: #fca5a5;
 }
 
-/* CARD CONTENT */
 .content {
     padding: 18px;
     display: flex;
@@ -242,7 +234,6 @@
     flex-grow: 1;
 }
 
-/* PRICE & ADD BUTTON */
 .bottom {
     display: flex;
     justify-content: space-between;
@@ -295,7 +286,6 @@
     color: #fff;
 }
 
-/* NO RESULTS */
 .no-results {
     grid-column: 1 / -1;
     text-align: center;
@@ -323,7 +313,6 @@
     font-size: 20px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .menu-controls {
         flex-direction: column;

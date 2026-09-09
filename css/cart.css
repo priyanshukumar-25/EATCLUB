@@ -1,7 +1,3 @@
-/* =========================================================
-   EAT CLUB - CART & CHECKOUT PAGE STYLES (css/cart.css)
-   ========================================================= */
-
 .cart-page {
     padding: 20px 0 80px;
 }
@@ -13,7 +9,6 @@
     align-items: flex-start;
 }
 
-/* CART ITEMS LIST */
 .cart-items-box {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -126,7 +121,6 @@
     text-align: right;
 }
 
-/* BILL SUMMARY BOX */
 .bill-box {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -144,7 +138,6 @@
     padding-bottom: 12px;
 }
 
-/* COUPON APPLY */
 .apply-coupon-form {
     display: flex;
     gap: 10px;
@@ -184,7 +177,6 @@
     color: #fff;
 }
 
-/* BILL ROWS */
 .bill-breakdown {
     display: flex;
     flex-direction: column;
@@ -218,7 +210,6 @@
     font-weight: 700;
 }
 
-/* EMPTY CART */
 .empty-cart-state {
     text-align: center;
     padding: 60px 20px;
@@ -249,7 +240,6 @@
     max-width: 400px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
     .cart-layout {
         grid-template-columns: 1fr;
